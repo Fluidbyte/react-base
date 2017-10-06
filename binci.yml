@@ -4,5 +4,6 @@ expose:
 tasks:
   env: env | sort
   shell: /bin/sh
+  install: yarn
   bundle: yarn run bundle
   up: yarn run up
