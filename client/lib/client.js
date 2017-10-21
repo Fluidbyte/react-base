@@ -4,37 +4,37 @@ import axios from 'axios'
 // request that should be available on the client lib
 const endpoints = {
   // Namespace
-  foo: {
+  items: {
     // Requests
-    getFoos: () => {
+    getItems: () => {
       return {
-        url: '/foos',
+        url: '/items',
         method: 'GET'
       }
     },
-    getFoo: (id) => {
+    getItem: (id) => {
       return {
-        url: `/foos/${id}`,
+        url: `/items/${id}`,
         method: 'GET'
       }
     },
-    createFoo: (data) => {
+    createItem: (data) => {
       return {
-        url: '/foos',
+        url: '/items',
         method: 'POST',
         data
       }
     },
-    updateFoo: (id, data) => {
+    updateItem: (id, data) => {
       return {
-        url: `/foos/${id}`,
+        url: `/items/${id}`,
         method: 'PUT',
         data
       }
     },
-    deleteFoo: (id) => {
+    deleteItem: (id) => {
       return {
-        url: `/foos/${id}`,
+        url: `/items/${id}`,
         method: 'DELETE'
       }
     }

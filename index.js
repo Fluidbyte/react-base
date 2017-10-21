@@ -29,7 +29,7 @@ let collection = []
 const findRecord = (id) => collection.filter((i) => i.id === id)[0] || false
 
 // Create
-app.post('/foos', (req, res) => {
+app.post('/items', (req, res) => {
   // Push into collection with random id
   const newFoo = Object.assign({ id: crypto.randomBytes(20).toString('hex') }, req.body)
   collection.push(newFoo)
@@ -37,7 +37,7 @@ app.post('/foos', (req, res) => {
 })
 
 // Read
-app.get('/foos/:id?', (req, res) => {
+app.get('/items/:id?', (req, res) => {
   if (req.params.id) {
     // Find a specific record (id param supplied)
     const record = findRecord(req.params.id)
@@ -50,7 +50,7 @@ app.get('/foos/:id?', (req, res) => {
 })
 
 // Update
-app.put('/foos/:id', (req, res) => {
+app.put('/items/:id', (req, res) => {
   const record = findRecord(req.params.id)
   // No record found
   if (!record) return res.status(404).send('No found')
@@ -65,7 +65,7 @@ app.put('/foos/:id', (req, res) => {
 })
 
 // Delete
-app.delete('/foos/:id', (req, res) => {
+app.delete('/items/:id', (req, res) => {
   collection = collection.filter((i) => i.id !== req.params.id)
   res.status(200).send('Ok')
 })
